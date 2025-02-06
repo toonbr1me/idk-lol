@@ -1,3 +1,5 @@
+
+
 @font-face {
     font-display: swap;
     font-family: 'Lato';
@@ -61,8 +63,6 @@ body{
     transition: .2s linear;
     padding-bottom: 1px;
     z-index: 999;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .header_nav {
     max-width: 100%;
@@ -92,26 +92,10 @@ body{
     margin-right: 0;
 }
 .header_link{
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 23px;
     line-height: 24px;
     color: #000080;
     text-decoration: none;
-    transition: color 0.3s ease;
-    position: relative;
-}
-.header_link::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #006DFE;
-    transition: width 0.3s ease;
-}
-.header_link:hover::after {
-    width: 100%;
 }
 .header_link:hover{
     text-decoration: none;
@@ -120,120 +104,68 @@ body{
 .header_link:hover, .header_link:focus, .header_link:active {
     opacity: .80;
 }
-/* Hero section (formerly intro) */
-.hero {
-    position: relative;
+/* intro */
+
+.intro{
     height: 100vh;
     background: url(../img/cover_on.jpg) no-repeat center;
     background-size: cover;
     padding-top: 200px;
 }
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.6)
-    );
-    z-index: 1;
+.intro_title{
+    max-width: 619px;
+    font-weight: 500;
+    font-size: 50px;
+    line-height: 60px;
+    color: #87CEFA;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
-
-.hero_content {
-    position: relative;
-    z-index: 2;
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.65);
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
+.intro_subtitle{
+    max-width: 750px;
+    color: #0000CD;
+    font-size: 23px;
+    line-height: 22px;
 }
-
-.hero_title {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    background: linear-gradient(45deg, #006DFE, #00BFFF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.hero_subtitle {
-    font-size: 1.4rem;
-    line-height: 1.6;
-    color: #333;
-    margin-bottom: 30px;
-}
-
 /* Placec */
 .places{
     margin-bottom: 131px;
-    padding: 40px 0;
-    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
 }
 .places_title{
     margin-bottom: 36px;
     margin-right: 15px;
-    font-size: 2.5em;
-    background: linear-gradient(45deg, #006DFE, #00BFFF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
 }
 .places_cards{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 20px;
-    padding: 20px;
+    grid-gap: 10px;
 }
 .places_card{
     position: relative;
     overflow: hidden;
-    border-radius: 25px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s ease;
-}
-.places_card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 109, 254, 0.3);
 }
 .places_card::after{
     display: block;
     content: '';
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7));
+    background-color:rgba(21, 24, 36, 0.4);
     position: absolute;
     top: 0;
     left: 0;
     z-index: 2;
-    transition: all 0.3s ease;
 }
-.places_card:hover::after {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+.places_card:hover .places_card-pic{
+    transform: scale(1.05);
 }
 .places_card-title{
-    font-size: 2.5em;
-    font-weight: 700;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    transform: translateY(20px);
-    transition: all 0.3s ease;
+    font-size: 50px;
+    line-height: 60px;
     color: white;
     position: absolute;
     bottom: 27px;
     left: 29px;
     z-index: 3;
-}
-.places_card:hover .places_card-title {
-    transform: translateY(0);
 }
 .places_card_size_lg{
     grid-column: span 3;
@@ -266,67 +198,47 @@ body{
 
 .tours{
     margin-bottom: 139px;
-    padding: 60px 0;
-    background: linear-gradient(to right, #f8f9fa, #ffffff);
+    display: flex;
+    flex-direction: row;
 }
 .tours_tour{
     display: flex;
     justify-content: space-between;
     align-items:center;
-    background: white;
-    border-radius: 30px;
-    padding: 30px;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
-}
-.tours_tour:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 109, 254, 0.2);
 }
 .tour_title{
-    font-weight: 700;
-    font-size: 2em;
-    line-height: 1.4;
-    margin-bottom: 20px;
-    background: linear-gradient(45deg, #006DFE, #00BFFF);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 80px;
 }
 .tour_desc{
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 30px;
-    max-width: 600px;
+    font-size: 16px;
+    line-height: 24px;
 }
 .tour_more{
-    font-size: 1.1em;
+    font-size: 16px;
     color: #fff;
     text-decoration: none;
-    background: linear-gradient(45deg, #006DFE, #00BFFF);
-    padding: 16px 35px;
-    border-radius: 30px;
-    font-weight: 600;
-    box-shadow: 0 8px 20px rgba(0, 109, 254, 0.3);
-    transition: all 0.3s ease;
-    display: inline-block;
+    padding-right: 59px ; 
+    line-height: 80px;
+    background-color: #006DFE;
+    padding: 16px 25px;
+    transition: all 0.15s ease;
 }
 .tour_more:hover{
-    background: linear-gradient(45deg, #005BCE, #009FFF);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(0, 109, 254, 0.4);
+    text-decoration: none;
+    background-color:#034caa;
+    animation-play-state: running;
+    transform: rotate(360deg);
 }
 .tour_pic{
-    transition: all 0.8s ease;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: all 2.0s ease;
 }
 .tour_pic:hover{
-    transform: rotate(-5deg) scale(1.05);
+    transform: rotate(-360deg);
 }
 .tours_tour .tour_pic {
+
     align-items: center;
     justify-content: center; 
 }
@@ -337,9 +249,8 @@ body{
     width: 597px;
     height: 354px;
     object-fit: cover; 
-    border-radius: 20px;
-    transition: all 0.4s ease;
 }
+
 
 /* nev */
 
